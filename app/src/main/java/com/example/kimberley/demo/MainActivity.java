@@ -8,8 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        textView = (TextView) findViewById(R.id.textView);
     }
 
     @Override
@@ -48,5 +53,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void button1click(View view) {
+        textView.setText("clicked button 1");
+        Toast.makeText(this,"This is a button 1 toast", Toast.LENGTH_SHORT).show();
+    }
+    public void button2click(View view) {
+        textView.setText("clicked button 2");
+        Toast.makeText(this, "This is a button 2 toast", Toast.LENGTH_SHORT).show();
+    }
+    public void button3click(View view) {
+        textView.setText("clicked button 3");
+        Toast.makeText(this, "This is a button 3 toast", Toast.LENGTH_SHORT).show();
     }
 }
